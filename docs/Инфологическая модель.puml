@@ -1,0 +1,84 @@
+@startuml
+!theme plain
+hide circle
+hide empty members
+skinparam linetype ortho
+skinparam entity {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+  FontName Arial
+  FontSize 12
+}
+
+entity "Role" as Role {
+  * role_id
+  role_name
+}
+
+entity "User" as User {
+  * user_id
+  login
+  password_hash
+  role_id
+  teacher_id
+}
+
+entity "Teacher" as Teacher {
+  * teacher_id
+  first_name
+  last_name
+  middle_name
+  academic_degree
+  work_experience
+  work_position
+}
+
+entity "Subject" as Subject {
+  * subject_id
+  subject_name
+}
+
+entity "ClassType" as ClassType {
+  * class_type_id
+  class_type_name
+}
+
+entity "AcademycYear" as AcademycYear {
+  * academic_year_id
+  academic_year_name
+}
+
+entity "Standard" as Standard {
+  * standard_id
+  subject_id
+  class_type_id
+  academic_year_id
+  hours
+}
+
+entity "Group" as Group {
+  * group_id
+  group_name
+}
+
+entity "Workload" as Workload {
+  * workload_id
+  teacher_id
+  group_id
+  standard_id
+  hours
+}
+
+Role ||--o{ User : "has role"
+Teacher |o--o| User : "has account"
+
+Subject ||--o{ Standard : "for subject"
+ClassType ||--o{ Standard : "for class type"
+AcademycYear ||--o{ Standard : "for academic year"
+
+Teacher ||--o{ Workload : ""
+Group ||--o{ Workload : ""
+Standard ||--o{ Workload : ""
+
+@enduml
