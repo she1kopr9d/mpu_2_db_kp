@@ -1,3 +1,5 @@
 *.bkp
 .DS_Store
 data/
+.gradle
+build

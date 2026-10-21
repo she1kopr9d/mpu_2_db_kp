@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'com.gradleup.shadow' version '8.3.3'
+}
+
+group = 'ru.kafedra'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+javafx {
+    version = '21.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    implementation 'com.mysql:mysql-connector-j:8.3.0'
+    implementation 'org.mindrot:jbcrypt:0.4'
+}
+
+application {
+    mainClass = 'ru.kafedra.Launcher'
+}
+
+shadowJar {
+    archiveBaseName.set('KafedraApp')
+    archiveClassifier.set('')
+    archiveVersion.set('1.0')
+    manifest {
+        attributes 'Main-Class': 'ru.kafedra.Launcher'
+    }
+    mergeServiceFiles()
+}
+
+build.dependsOn shadowJar
