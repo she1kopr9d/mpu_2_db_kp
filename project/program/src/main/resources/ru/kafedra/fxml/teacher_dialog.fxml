@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.TeacherDialogController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label fx:id="_titleLabel" text="Добавление преподавателя" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Фамилия:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="_lastNameField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Имя:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="_firstNameField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Отчество:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="_middleNameField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Ученая степень:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="_degreeField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <Label text="Стаж (лет):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="_experienceField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        
+        <Label text="Должность:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <TextField fx:id="_positionField" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    </GridPane>
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button onAction="#handleSave" text="Сохранить" prefWidth="100.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+        <Button onAction="#handleCancel" text="Отмена" prefWidth="100.0" />
+    </HBox>
+</VBox>

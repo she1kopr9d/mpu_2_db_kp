@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS `Workload`;
@@ -90,9 +92,9 @@ INSERT INTO `Teacher` (first_name, last_name, middle_name, academic_degree, work
 ('Дмитрий', 'Кузнецов', 'Андреевич', 'Кандидат наук', 8, 'Старший преподаватель');
 
 INSERT INTO `User` (login, password_hash, role_id, teacher_id) VALUES
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 1, NULL),
-('ivanov', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 2, 1),
-('petrov', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 2, 2);
+('admin', '$2a$10$ExU1fY1tGs0GaHSISSmyI.zac7UGB6/jmbpZdI7kRlwds0vP.mrZq', 1, NULL),
+('ivanov', '$2a$10$ExU1fY1tGs0GaHSISSmyI.zac7UGB6/jmbpZdI7kRlwds0vP.mrZq', 2, 1),
+('petrov', '$2a$10$ExU1fY1tGs0GaHSISSmyI.zac7UGB6/jmbpZdI7kRlwds0vP.mrZq', 2, 2);
 
 INSERT INTO `Subject` (subject_name) VALUES 
 ('Базы данных'), 

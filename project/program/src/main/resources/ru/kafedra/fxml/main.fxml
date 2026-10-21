@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.MainController">
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+            <Label fx:id="_welcomeLabel" text="Добро пожаловать!" />
+            <Button onAction="#handleProfile" text="Профиль" />
+            <Button onAction="#handleLogout" text="Выйти" />
+        </HBox>
+    </top>
+    <center>
+        <TabPane fx:id="_tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Нагрузка" fx:id="_myWorkloadTab">
+                <VBox spacing="10.0" style="-fx-padding: 10;">
+                    <HBox spacing="10.0" fx:id="_adminButtonsBox">
+                        <Button onAction="#handleAddWorkload" text="Добавить нагрузку" />
+                        <Button onAction="#handleEditWorkload" text="Редактировать" />
+                        <Button onAction="#handleDeleteWorkload" text="Удалить выбранное" style="-fx-text-fill: red;" />
+                    </HBox>
+                    <TableView fx:id="_workloadTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="_colTeacher" text="Преподаватель" prefWidth="220"/>
+                            <TableColumn fx:id="_colSubject" text="Предмет" prefWidth="200"/>
+                            <TableColumn fx:id="_colClassType" text="Вид занятия" prefWidth="150"/>
+                            <TableColumn fx:id="_colGroup" text="Группа" prefWidth="100"/>
+                            <TableColumn fx:id="_colYear" text="Учебный год" prefWidth="120"/>
+                            <TableColumn fx:id="_colHours" text="Часы" prefWidth="80"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+            <Tab text="Справочники" fx:id="_adminTab">
+                <TabPane tabClosingPolicy="UNAVAILABLE">
+                    <Tab text="Преподаватели">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddTeacher" text="Добавить" />
+                                <Button onAction="#handleEditTeacher" text="Редактировать" />
+                                <Button onAction="#handleDeleteTeacher" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_teacherTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colTLastName" text="Фамилия" prefWidth="150"/>
+                                    <TableColumn fx:id="_colTFirstName" text="Имя" prefWidth="150"/>
+                                    <TableColumn fx:id="_colTMiddleName" text="Отчество" prefWidth="150"/>
+                                    <TableColumn fx:id="_colTDegree" text="Степень" prefWidth="150"/>
+                                    <TableColumn fx:id="_colTExperience" text="Стаж" prefWidth="80"/>
+                                    <TableColumn fx:id="_colTPosition" text="Должность" prefWidth="150"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Предметы">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddSubject" text="Добавить" />
+                                <Button onAction="#handleEditSubject" text="Редактировать" />
+                                <Button onAction="#handleDeleteSubject" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_subjectTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colSubjectName" text="Название" prefWidth="300"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Группы">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddGroup" text="Добавить" />
+                                <Button onAction="#handleEditGroup" text="Редактировать" />
+                                <Button onAction="#handleDeleteGroup" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_groupTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colGroupName" text="Название" prefWidth="300"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Нормативы">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddStandard" text="Добавить" />
+                                <Button onAction="#handleEditStandard" text="Редактировать" />
+                                <Button onAction="#handleDeleteStandard" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_standardTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colStandardName" text="Норматив" prefWidth="500"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Виды занятий">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddClassType" text="Добавить" />
+                                <Button onAction="#handleEditClassType" text="Редактировать" />
+                                <Button onAction="#handleDeleteClassType" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_classTypeTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colClassTypeName" text="Название" prefWidth="300"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Учебные годы">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleAddYear" text="Добавить" />
+                                <Button onAction="#handleEditYear" text="Редактировать" />
+                                <Button onAction="#handleDeleteYear" text="Удалить" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_yearTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colYearName" text="Название" prefWidth="300"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                    <Tab text="Пользователи">
+                        <VBox spacing="10.0" style="-fx-padding: 10;">
+                            <HBox spacing="10.0">
+                                <Button onAction="#handleLinkUser" text="Привязать к преподавателю" />
+                                <Button onAction="#handleDeleteUser" text="Удалить пользователя" style="-fx-text-fill: red;" />
+                            </HBox>
+                            <TableView fx:id="_userTable" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="_colUserLogin" text="Логин" prefWidth="200"/>
+                                    <TableColumn fx:id="_colUserRole" text="Роль" prefWidth="150"/>
+                                    <TableColumn fx:id="_colUserTeacher" text="Привязанный преподаватель" prefWidth="300"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </Tab>
+                </TabPane>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

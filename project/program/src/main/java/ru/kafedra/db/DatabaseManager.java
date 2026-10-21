@@ -8,7 +8,7 @@ public class DatabaseManager {
     private static DatabaseManager _dbInstance;
     private Connection _dbConnection;
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/kafedra_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/kafedra_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "rootpassword";
 
@@ -16,7 +16,6 @@ public class DatabaseManager {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this._dbConnection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            System.out.println("Успешное подключение к БД!");
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println("Ошибка подключения к БД: " + e.getMessage());
             throw new RuntimeException(e);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.LoginController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label text="Вход в систему">
+        <font><Font size="24.0" /></font>
+    </Label>
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="_loginField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="_passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
+    <Button fx:id="_loginButton" onAction="#handleLogin" prefWidth="150.0" text="Войти" />
+    <Button fx:id="_registerButton" onAction="#handleRegister" prefWidth="150.0" text="Регистрация" />
+</VBox>

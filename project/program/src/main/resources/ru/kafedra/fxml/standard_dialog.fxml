@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.StandardDialogController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label text="Добавление норматива" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Предмет:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="_subjectCombo" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Вид занятия:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="_classTypeCombo" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Учебный год:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="_yearCombo" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="Часы:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="_hoursField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </GridPane>
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button onAction="#handleSave" text="Сохранить" prefWidth="100.0" />
+        <Button onAction="#handleCancel" text="Отмена" prefWidth="100.0" />
+    </HBox>
+</VBox>

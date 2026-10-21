@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.RegisterController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label text="Регистрация аккаунта">
+        <font><Font size="20.0" /></font>
+    </Label>
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="_loginField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="_passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="(8+ символов, 1 цифра, 1 заглавная, 1 спецсимвол)" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-size: 10px; -fx-text-fill: gray;"/>
+    </GridPane>
+    <Button onAction="#handleRegister" prefWidth="150.0" text="Зарегистрироваться" />
+    <Button onAction="#handleBack" prefWidth="150.0" text="Назад" />
+</VBox>

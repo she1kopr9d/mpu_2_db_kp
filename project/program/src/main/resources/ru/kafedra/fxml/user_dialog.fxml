@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.UserDialogController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label fx:id="_loginLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <Label text="Выберите преподавателя для привязки:" />
+    <ComboBox fx:id="_teacherCombo" prefWidth="250.0" />
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button onAction="#handleSave" text="Привязать" prefWidth="100.0" />
+        <Button onAction="#handleUnlink" text="Отвязать" prefWidth="100.0" style="-fx-text-fill: red;" />
+        <Button onAction="#handleCancel" text="Отмена" prefWidth="100.0" />
+    </HBox>
+</VBox>

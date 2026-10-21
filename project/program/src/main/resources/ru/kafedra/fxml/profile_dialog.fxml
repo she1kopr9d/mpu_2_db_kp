@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="CENTER" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kafedra.controller.ProfileDialogController">
+    <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+    <Label text="Настройки профиля" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    
+    <GridPane hgap="10.0" vgap="10.0">
+        <Label text="Логин:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="_loginField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Старый пароль:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="_oldPasswordField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Новый пароль:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <PasswordField fx:id="_newPasswordField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="(8+ символов, 1 цифра, 1 заглавная, 1 спецсимвол)" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-size: 10px; -fx-text-fill: gray;"/>
+    </GridPane>
+    
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button onAction="#handleSave" text="Сохранить" prefWidth="100.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+        <Button onAction="#handleCancel" text="Отмена" prefWidth="100.0" />
+    </HBox>
+</VBox>
